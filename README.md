@@ -50,8 +50,11 @@ For the tests, the following table was created and data was inserted into it.
 sql commands:
 
 SELECT min_to_max(numeric_col) FROM my_table;
+
 SELECT min_to_max(varchar_col) FROM my_table;
+
 SELECT min_to_max(text_col) FROM my_table;
+
 SELECT min_to_max(jsonb_col) FROM my_table;
 
 
@@ -65,10 +68,15 @@ results:
 
 
 You can also test without creating a table as follows.
+
 sql commands:
+
 select min_to_max(val) from (values(5),(3),(6),(7),(9),(10),(7)) t(val);
+
 select min_to_max(val) from (values(null::int),(-15::int),(5000::numeric),(42::bigint),(15699.6152)) t(val);
+
 select min_to_max(val) from (values(null::int),(null::int)) t(val);
+
 select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 
 
