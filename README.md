@@ -26,10 +26,10 @@ Aggregate functions - Details
 
 This code(min_to_max--0.0.1.sql) creates two functions and an aggregate in the PostgreSQL database management system using the PL/pgSQL language.
 
-The first function, "min_to_max_trans", takes in two inputs: "agg" and "val". "agg" is a numeric array and "val" is a numeric value. 
+The first function, "min_to_max_trans_numeric", takes in two inputs: "agg" and "val". "agg" is a numeric array and "val" is a numeric value. 
 The function returns a numeric array. The purpose of this function is to update the minimum and maximum values in the "agg" array by comparing "val" to the current values in the array.
 
-The second function, "uagg_m2m_fin", takes in one input "cagg" which is a numeric array. The function returns a text value. The purpose of this function is to format the "cagg" array as a string with the format "cagg[1] -> cagg[2]"
+The second function, "get_min_to_max_numeric_fin", takes in one input "cagg" which is a numeric array. The function returns a text value. The purpose of this function is to format the "cagg" array as a string with the format "cagg[1] -> cagg[2]"
 
 The third statement creates an aggregate called "min_to_max" that takes in a numeric value. The aggregate uses the "min_to_max_trans" function as its "SFUNC" (state transition function), 
 which updates the minimum and maximum values of the aggregate, "STYPE" is numeric array, "FINALFUNC" is "uagg_m2m_fin" which returns the final result as text, and "INITCOND" is set to '{NULL,NULL}', which is the initial value for the aggregate.
