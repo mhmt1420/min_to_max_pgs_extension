@@ -24,6 +24,7 @@ CREATE EXTENSION min_to_max;
 
 Aggregate functions - Details
 
+NUMERIC: 
 This code(min_to_max--0.0.1.sql) creates two functions and an aggregate in the PostgreSQL database management system using the PL/pgSQL language.
 
 The first function, "min_to_max_trans_numeric", takes in two inputs: "agg" and "val". "agg" is a numeric array and "val" is a numeric value. 
@@ -34,7 +35,10 @@ The second function, "get_min_to_max_numeric_fin", takes in one input "cagg" whi
 The third statement creates an aggregate called "min_to_max" that takes in a numeric value. The aggregate uses the "min_to_max_trans" function as its "SFUNC" (state transition function), 
 which updates the minimum and maximum values of the aggregate, "STYPE" is numeric array, "FINALFUNC" is "uagg_m2m_fin" which returns the final result as text, and "INITCOND" is set to '{NULL,NULL}', which is the initial value for the aggregate.
 
+TEXT:
+The aggregate function "min_to_max(text)" finds the minimum and maximum values of a set of text data. The transition function "min_to_max_trans_text" takes in two arguments: "agg", an array containing the current minimum and maximum values, and "val", the value being processed. It first checks if the first element of the "agg" array is null or if "val" is less than the first element, if so it sets the first element to "val". Then it checks if the second element of the "agg" array is null or if "val" is greater than the second element, if so it sets the second element to "val". Finally, it returns the updated aggregate array. The final function "get_min_to_max_text_fin" takes in one argument "cagg", an array containing the final minimum and maximum values. It sets the first and second elements of the final aggregate array to the first and second elements of the input aggregate array if the first element is not null. Then it concatenate the first and second elements of the final aggregate array with an arrow separator and return the result.
 
+JSON:
 The first function, "min_to_max_jsonb_trans", takes in two arguments: "agg" and "val". "agg" is an array of jsonb data types and "val" is a single jsonb data type. This function compares the "val" to the first and second elements of the "agg" array. If "val" is less than the first element of the "agg" array or the first element is null, the first element of the "agg" array is set to "val". If "val" is greater than the second element of the "agg" array or the second element is null, the second element of the "agg" array is set to "val". The updated "agg" array is then returned.
 
 The second function, "min_to_max_jsonb_final", takes in a single argument "cagg", an array of jsonb data types. This function declares a new variable "agg" which is set to an array with two null jsonb values. The function then checks if the first element of the "cagg" array is not null, if it is not then the first and second elements of "agg" are set to the first and second elements of "cagg". Finally, the function returns a text value that is the concatenation of the first element of "agg" casted as text, a string " -> " and the second element of "agg" also casted as text.
@@ -87,9 +91,12 @@ select min_to_max(val) from (values(null::int),(null::int)) t(val);
 select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 
 
+
 results:
 
 <img width="687" alt="image" src="https://user-images.githubusercontent.com/46605193/212557281-dfb71e3b-569f-44d6-90eb-f2defb53333f.png">
+
+
 
 
 
