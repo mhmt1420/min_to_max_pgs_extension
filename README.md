@@ -41,7 +41,7 @@ Testing Extension
 For the tests, the following table was created and data was inserted into it.
 
 
-<img width="689" alt="image" src="https://user-images.githubusercontent.com/46605193/212556766-bc205c0d-b546-4e64-9bc2-f850cfaecffd.png">
+<img width="684" alt="image" src="https://user-images.githubusercontent.com/46605193/212557238-f9e5fca5-a247-405e-abe0-5b55b3824e24.png">
 
 
 
@@ -61,7 +61,7 @@ SELECT min_to_max(jsonb_col) FROM my_table;
 
 results:
 
-<img width="678" alt="image" src="https://user-images.githubusercontent.com/46605193/212556786-b2a48ca9-fc11-4589-99c2-9babe5bfda8a.png">
+<img width="679" alt="image" src="https://user-images.githubusercontent.com/46605193/212557263-1db8fd90-974d-4d0a-a59e-078a9d0b67df.png">
 
 
 
@@ -82,9 +82,8 @@ select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 
 results:
 
-<img width="683" alt="image" src="https://user-images.githubusercontent.com/46605193/212556805-fe50d14a-fe2d-43a1-bbd3-2ad414f4dd89.png">
+<img width="687" alt="image" src="https://user-images.githubusercontent.com/46605193/212557281-dfb71e3b-569f-44d6-90eb-f2defb53333f.png">
 
 
 Author
 Mahmut ÇAĞLAYAN
-
