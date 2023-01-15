@@ -1,0 +1,4 @@
+# min_to_max extension
+comment = 'min_to_max extension'
+default_version = '0.0.1'
+relocatable = true
