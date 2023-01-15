@@ -40,6 +40,7 @@ Testing Extension
 
 For the tests, the following table was created and data was inserted into it.
 
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/46605193/212556766-bc205c0d-b546-4e64-9bc2-f850cfaecffd.png">
 
 
 sql commands:
@@ -49,7 +50,7 @@ SELECT min_to_max(text_col) FROM my_table;
 SELECT min_to_max(jsonb_col) FROM my_table;
 
 results:
-
+<img width="678" alt="image" src="https://user-images.githubusercontent.com/46605193/212556786-b2a48ca9-fc11-4589-99c2-9babe5bfda8a.png">
 
 
 You can also test without creating a table as follows.
@@ -60,10 +61,9 @@ select min_to_max(val) from (values(null::int),(null::int)) t(val);
 select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 
 results:
-
+<img width="683" alt="image" src="https://user-images.githubusercontent.com/46605193/212556805-fe50d14a-fe2d-43a1-bbd3-2ad414f4dd89.png">
 
 
 Author
 Mahmut ÇAĞLAYAN
-![image](https://user-images.githubusercontent.com/46605193/212556682-bec4d302-c247-4975-a0a2-bbfee2885210.png)
 
