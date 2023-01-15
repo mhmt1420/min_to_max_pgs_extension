@@ -78,7 +78,8 @@ and FINALFUNC (final function). The STYPE is jsonb[] and the INITCOND is a jsonb
 
 For the tests, the following table was created and data was inserted into it.
 
-table ss1
+<img width="689" alt="image" src="https://user-images.githubusercontent.com/46605193/212560062-a91b9ed8-3707-4c4f-a462-244eebf62df9.png">
+
 
 sql commands:
 ```sql
@@ -90,7 +91,8 @@ SELECT min_to_max(jsonb_col) FROM my_table;
 
 results: 
 
-SS2
+<img width="685" alt="image" src="https://user-images.githubusercontent.com/46605193/212560089-0348ddd7-3633-420b-ac36-f71458426b84.png">
+
 
 
 You can also test without creating a table as follows.
@@ -105,4 +107,5 @@ select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 
 results: 
 
-SS3
+<img width="685" alt="image" src="https://user-images.githubusercontent.com/46605193/212560107-5bc08359-1790-4914-97c7-cea0a769bb1e.png">
+
