@@ -41,6 +41,9 @@ Doing it in plain SQL it would be a select on pg_extension:
 SELECT * FROM pg_extension;
 ```
 
+<img width="836" alt="image" src="https://user-images.githubusercontent.com/46605193/212642796-bd02f077-48d8-4160-b122-1e9a169aa942.png">
+
+
 ## Aggregate functions - Details
 
 ```text
@@ -121,6 +124,8 @@ select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 results: 
 
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/46605193/212560107-5bc08359-1790-4914-97c7-cea0a769bb1e.png">
+
+
 
 
 
