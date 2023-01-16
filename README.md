@@ -28,6 +28,18 @@ Then in the database of your choice you can create extension as shown below:
 ```bash 
 CREATE EXTENSION min_to_max;
 ```
+You can list the extensions and their versions by using below commands:
+In psql that would be
+```sql
+\dx
+```
+
+Doing it in plain SQL it would be a select on pg_extension:
+
+```sql
+SELECT * FROM pg_extension;
+```
+
 ## Aggregate functions - Details
 
 ```text
@@ -108,6 +120,8 @@ select min_to_max(val) from (values('Mah'::text),('Mahmut'::text)) t(val);
 results: 
 
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/46605193/212560107-5bc08359-1790-4914-97c7-cea0a769bb1e.png">
+
+
 
 Author
 
