@@ -44,6 +44,9 @@ SELECT * FROM pg_extension;
 <img width="836" alt="image" src="https://user-images.githubusercontent.com/46605193/212642796-bd02f077-48d8-4160-b122-1e9a169aa942.png">
 
 
+NOTE: You can use the extension without any changes in PostgreSQL version>=12. 
+
+
 ## Aggregate functions - Details
 
 ```text
