@@ -45,7 +45,7 @@ The purpose of this function is to format the "cagg" array as a string with the 
 The third statement creates an aggregate called "min_to_max" that takes in a numeric value. 
 The aggregate uses the "min_to_max_trans" function as its "SFUNC" (state transition function), 
 which updates the minimum and maximum values of the aggregate, "STYPE" is numeric array, 
-"FINALFUNC" is "uagg_m2m_fin" which returns the final result as text, and "INITCOND" is set to '{NULL,NULL}', 
+"FINALFUNC" is "get_min_to_max_numeric_fin" which returns the final result as text, and "INITCOND" is set to '{NULL,NULL}', 
 which is the initial value for the aggregate.
 
 TEXT:
@@ -70,7 +70,7 @@ The second function, "min_to_max_jsonb_final", takes in a single argument "cagg"
 The function then checks if the first element of the "cagg" array is not null, if it is not then the first and second elements of "agg" are set to the first and second elements of "cagg". 
 Finally, the function returns a text value that is the concatenation of the first element of "agg" casted as text, a string " -> " and the second element of "agg" also casted as text.
 
-Lastly, the aggregate function "min_to_max_jsonb" is created. This aggregate function takes in jsonb data type as input and it uses the two functions created above as its SFUNC (state transition function) 
+Lastly, the aggregate function "min_to_max" is created. This aggregate function takes in jsonb data type as input and it uses the two functions created above as its SFUNC (state transition function) 
 and FINALFUNC (final function). The STYPE is jsonb[] and the INITCOND is a jsonb array with two null values. This aggregate can be used to find the minimum and maximum values of a jsonb column in a table.
 ```
 
