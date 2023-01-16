@@ -103,11 +103,17 @@ SELECT min_to_max(numeric_col) FROM my_table;
 SELECT min_to_max(varchar_col) FROM my_table;
 SELECT min_to_max(text_col) FROM my_table;
 SELECT min_to_max(jsonb_col) FROM my_table;
+SELECT min_to_max(numeric_col) FROM my_table WHERE numeric_col > 2;
 ```
 
 results: 
 
 <img width="685" alt="image" src="https://user-images.githubusercontent.com/46605193/212560089-0348ddd7-3633-420b-ac36-f71458426b84.png">
+
+
+
+<img width="531" alt="image" src="https://user-images.githubusercontent.com/46605193/212645462-416d3897-3b16-4d99-9c32-ea0b025b85dc.png">
+
 
 
 
