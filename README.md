@@ -29,6 +29,7 @@ Then in the database of your choice you can create extension as shown below:
 CREATE EXTENSION min_to_max;
 ```
 You can list the extensions and their versions by using below commands:
+
 In psql that would be
 ```sql
 \dx
